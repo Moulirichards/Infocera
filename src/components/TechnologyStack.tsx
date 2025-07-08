@@ -341,13 +341,13 @@ export const TechnologyStack = () => {
               categoryGroup.length === 2 ? (
                 <div key={pageIdx + '-' + idx + '-grouped'} className={`flex flex-col items-center w-full ${idx === 0 ? 'ml-12' : ''}`}>
                   <div className="w-full">
-                    <div className="rounded-3xl bg-slate-900/95 shadow-2xl p-3 md:p-6 w-full flex flex-col md:flex-row gap-6 md:gap-0">
+                    <div className="rounded-md md:rounded-3xl bg-slate-900/95 shadow-2xl p-0.5 md:p-6 w-full flex flex-col md:flex-row gap-1 md:gap-0">
                       {/* First sub-card */}
                       <div className="flex-1 flex flex-col items-center">
-                        <div className="rounded-2xl bg-slate-800/90 shadow-xl p-3 md:p-4 w-full h-full flex flex-col">
+                        <div className="rounded-md md:rounded-2xl bg-slate-800/90 shadow-xl p-0.5 md:p-4 w-full h-full flex flex-col">
                           <div className="mb-4 md:mb-6 flex items-center justify-center">
-                            <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
-                              <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
+                            <div className="px-1 py-0.5 md:px-6 md:py-3 rounded-md md:rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
+                              <span className="text-[10px] md:text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
                             </div>
                           </div>
                           <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
@@ -394,7 +394,7 @@ export const TechnologyStack = () => {
                       </div>
                       {/* Second sub-card */}
                       <div className="flex-1 flex flex-col items-center mt-6 md:mt-0 md:ml-6">
-                        <div className="rounded-2xl bg-slate-800/90 shadow-xl p-3 md:p-4 w-full h-full flex flex-col">
+                        <div className="rounded-2xl bg-slate-800/90 shadow-xl p-2 md:p-4 w-full h-full flex flex-col">
                           <div className="mb-4 md:mb-6 flex items-center justify-center">
                             <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
                               <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[1].name}</span>
@@ -449,10 +449,10 @@ export const TechnologyStack = () => {
                 // Default rendering for other cards
                 <div key={pageIdx + '-' + idx + '-' + categoryGroup[0].name} className="flex flex-col items-center w-full">
                   <div className="w-full">
-                    <div className="rounded-3xl bg-slate-800/90 shadow-2xl p-3 md:p-4 w-full">
+                    <div className="rounded-md md:rounded-3xl bg-slate-800/90 shadow-2xl p-0.5 md:p-4 w-full">
                       <div className="mb-4 md:mb-6 flex items-center justify-center">
-                        <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
-                          <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
+                        <div className="px-1 py-0.5 md:px-6 md:py-3 rounded-md md:rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
+                          <span className="text-[10px] md:text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
