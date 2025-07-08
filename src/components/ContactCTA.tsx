@@ -263,30 +263,15 @@ export const ContactCTA = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 md:py-32 px-4 md:px-0 flex flex-col items-center justify-center min-h-[400px] md:min-h-[500px] overflow-hidden"
-      style={bgLoaded ? {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/transformbg.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      } : {
-        background: 'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7))',
-      }}
+      className="relative py-20 md:py-32 px-4 md:px-0 flex flex-col items-center justify-center min-h-[400px] md:min-h-[500px] overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
     >
-      {/* LQIP blurred background */}
-      {!bgLoaded && (
-        <div style={{
-          backgroundImage: `url('/transformbg-blur.webp')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(16px)',
-          position: 'absolute',
-          inset: 0,
-          zIndex: 0,
-        }} />
-      )}
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      {/* Animated background elements (same as ClientsSection) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(120,119,198,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,119,198,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <div className="text-white">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-6" style={{ fontFamily: 'Exo, Arial, sans-serif', color: '#fff' }}>Ready to Transform Your Business?</h2>

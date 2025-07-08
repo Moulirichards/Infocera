@@ -33,15 +33,15 @@ export const PortfolioSection = () => {
 
   return (
     <section 
-      className="py-8 relative"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/portfoliobg.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="py-8 relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      {/* Animated background elements (same as ClientsSection) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.05),transparent_50%)]"></div>
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(120,119,198,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,119,198,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[#0154b4] to-[#7deff6] bg-clip-text text-transparent" style={{ fontFamily: 'EB Garamond, serif' }}>Our Portfolio</h2>
           <div className="w-16 md:w-24 h-1 bg-white mx-auto mb-4 md:mb-8"></div>
