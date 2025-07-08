@@ -259,10 +259,22 @@ export const TechnologyStack = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Split categories into pages of pageSize
+  // Group UI Design and Server Side Scripting together for the first card
+  // Now also group the next four categories into two parent cards, each with two sub-cards
+  const groupedCategories = [
+    [technologyCategories[0], technologyCategories[1]], // UI Design & Server Side Scripting
+    [technologyCategories[2], technologyCategories[3]], // Cloud Computing & Database & Analytics
+    [technologyCategories[4], technologyCategories[5]], // Web Server Technology & Testing & Process
+  ];
+  // If there are more categories, add them as single-category cards
+  if (technologyCategories.length > 6) {
+    groupedCategories.push(...technologyCategories.slice(6).map((cat) => [cat]));
+  }
+
+  // Split grouped categories into pages of pageSize
   const pages = [];
-  for (let i = 0; i < technologyCategories.length; i += pageSize) {
-    pages.push(technologyCategories.slice(i, i + pageSize));
+  for (let i = 0; i < groupedCategories.length; i += pageSize) {
+    pages.push(groupedCategories.slice(i, i + pageSize));
   }
 
   // Swipe indicator logic
@@ -317,67 +329,176 @@ export const TechnologyStack = () => {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 w-full relative" style={{scrollbarWidth: 'none'}}
+        className="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-4 w-full relative px-2 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64" style={{scrollbarWidth: 'none'}}
       >
         {pages.map((categories, pageIdx) => (
           <div
             key={pageIdx}
-            className={`min-w-full flex-shrink-0 snap-center grid ${pageSize === 1 ? 'grid-cols-1' : 'grid-cols-2'} gap-12 justify-items-center items-start`}
+            className={`flex-shrink-0 snap-center grid ${pageSize === 1 ? 'grid-cols-1' : 'grid-cols-2'} gap-12 justify-items-center items-start justify-start`}
           >
-            {categories.map((category, idx) => (
-              <div key={pageIdx + '-' + idx + '-' + category.name} className="flex flex-col items-center w-full">
-                <div className="w-full">
-                  <div className="rounded-3xl bg-slate-800/90 shadow-2xl p-3 md:p-8 w-full">
-                    <div className="mb-4 md:mb-6 flex items-center justify-center">
-                      <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
-                        <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{category.name}</span>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
-                      {category.technologies.map((tech) => {
-                        const pageName = techPageMap[tech.name] ||
-                          tech.name
-                            .toLowerCase()
-                            .replace(/\s+/g, '-')
-                            .replace(/\//g, '-')
-                            .replace(/\+/, 'plus')
-                            .replace(/\./g, '')
-                            .replace(/\&/g, 'and')
-                            .replace(/[^a-z0-9\-]/g, '');
-                        return (
-                          <div
-                            key={tech.name}
-                            className={`relative flex flex-col justify-end p-2 md:p-5 rounded-2xl shadow-lg overflow-hidden ${techGradients[tech.name] || 'bg-gradient-to-br from-gray-300 to-gray-500'} transition-transform duration-300 hover:scale-105 hover:shadow-2xl`}
-                            style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.10)' }}
-                          >
-                            {/* Large, dark, visible logo in background */}
-                            <img
-                              src={tech.logo}
-                              alt=""
-                              aria-hidden="true"
-                              className="absolute right-1 bottom-1 w-20 h-20 md:w-32 md:h-32 opacity-40 pointer-events-none select-none filter grayscale brightness-50"
-                              style={{ zIndex: 1 }}
-                            />
-                            {/* Content */}
-                            <div className="relative z-10 flex flex-col gap-1 md:gap-2">
-                              <span className="text-white text-sm md:text-lg font-bold leading-tight drop-shadow-lg">{tech.name}</span>
-                              <span className="text-white/90 text-[10px] md:text-xs font-medium mb-1 md:mb-2 drop-shadow" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>
-                                {techDescriptions[tech.name] || 'A modern technology for digital solutions.'}
-                              </span>
-                              <Link
-                                to={`/technologies/${pageName}`}
-                                className="mt-1 px-2 py-1 md:px-4 md:py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg font-semibold text-[10px] md:text-xs shadow transition-colors duration-200 w-fit"
-                                style={{textShadow: 'none'}}>
-                                Learn More
-                              </Link>
+            {categories.map((categoryGroup, idx) => (
+              // Special rendering for grouped cards (2 categories in one parent card)
+              categoryGroup.length === 2 ? (
+                <div key={pageIdx + '-' + idx + '-grouped'} className={`flex flex-col items-center w-full ${idx === 0 ? 'ml-12' : ''}`}>
+                  <div className="w-full">
+                    <div className="rounded-3xl bg-slate-900/95 shadow-2xl p-3 md:p-6 w-full flex flex-col md:flex-row gap-6 md:gap-0">
+                      {/* First sub-card */}
+                      <div className="flex-1 flex flex-col items-center">
+                        <div className="rounded-2xl bg-slate-800/90 shadow-xl p-3 md:p-4 w-full h-full flex flex-col">
+                          <div className="mb-4 md:mb-6 flex items-center justify-center">
+                            <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
+                              <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
                             </div>
                           </div>
-                        );
-                      })}
+                          <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
+                            {categoryGroup[0].technologies.map((tech) => {
+                              const pageName = techPageMap[tech.name] ||
+                                tech.name
+                                  .toLowerCase()
+                                  .replace(/\s+/g, '-')
+                                  .replace(/\//g, '-')
+                                  .replace(/\+/, 'plus')
+                                  .replace(/\./g, '')
+                                  .replace(/\&/g, 'and')
+                                  .replace(/[^a-z0-9\-]/g, '');
+                              return (
+                                <div
+                                  key={tech.name}
+                                  className={`relative flex flex-col justify-end p-2 md:p-5 rounded-2xl shadow-lg overflow-hidden h-[9.5rem] w-[20rem] ${techGradients[tech.name] || 'bg-gradient-to-br from-gray-300 to-gray-500'} transition-transform duration-300 hover:scale-105 hover:shadow-2xl`}
+                                  style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.10)' }}
+                                >
+                                  <img
+                                    src={tech.logo}
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="absolute right-1 bottom-1 w-20 h-20 md:w-32 md:h-32 opacity-40 pointer-events-none select-none filter grayscale brightness-50"
+                                    style={{ zIndex: 1 }}
+                                  />
+                                  <div className="relative z-10 flex flex-col gap-1 md:gap-2">
+                                    <span className="text-white text-sm md:text-lg font-bold leading-tight drop-shadow-lg">{tech.name}</span>
+                                    <span className="text-white/90 text-[10px] md:text-xs font-medium mb-1 md:mb-2 drop-shadow" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>
+                                      {techDescriptions[tech.name] || 'A modern technology for digital solutions.'}
+                                    </span>
+                                    <Link
+                                      to={`/technologies/${pageName}`}
+                                      className="mt-1 px-2 py-1 md:px-4 md:py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg font-semibold text-[10px] md:text-xs shadow transition-colors duration-200 w-fit"
+                                      style={{textShadow: 'none'}}>
+                                      Learn More
+                                    </Link>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                      {/* Second sub-card */}
+                      <div className="flex-1 flex flex-col items-center mt-6 md:mt-0 md:ml-6">
+                        <div className="rounded-2xl bg-slate-800/90 shadow-xl p-3 md:p-4 w-full h-full flex flex-col">
+                          <div className="mb-4 md:mb-6 flex items-center justify-center">
+                            <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
+                              <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[1].name}</span>
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
+                            {categoryGroup[1].technologies.map((tech) => {
+                              const pageName = techPageMap[tech.name] ||
+                                tech.name
+                                  .toLowerCase()
+                                  .replace(/\s+/g, '-')
+                                  .replace(/\//g, '-')
+                                  .replace(/\+/, 'plus')
+                                  .replace(/\./g, '')
+                                  .replace(/\&/g, 'and')
+                                  .replace(/[^a-z0-9\-]/g, '');
+                              return (
+                                <div
+                                  key={tech.name}
+                                  className={`relative flex flex-col justify-end p-2 md:p-5 rounded-2xl shadow-lg overflow-hidden h-[9.5rem] w-[20rem] ${techGradients[tech.name] || 'bg-gradient-to-br from-gray-300 to-gray-500'} transition-transform duration-300 hover:scale-105 hover:shadow-2xl`}
+                                  style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.10)' }}
+                                >
+                                  <img
+                                    src={tech.logo}
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="absolute right-1 bottom-1 w-20 h-20 md:w-32 md:h-32 opacity-40 pointer-events-none select-none filter grayscale brightness-50"
+                                    style={{ zIndex: 1 }}
+                                  />
+                                  <div className="relative z-10 flex flex-col gap-1 md:gap-2">
+                                    <span className="text-white text-sm md:text-lg font-bold leading-tight drop-shadow-lg">{tech.name}</span>
+                                    <span className="text-white/90 text-[10px] md:text-xs font-medium mb-1 md:mb-2 drop-shadow" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>
+                                      {techDescriptions[tech.name] || 'A modern technology for digital solutions.'}
+                                    </span>
+                                    <Link
+                                      to={`/technologies/${pageName}`}
+                                      className="mt-1 px-2 py-1 md:px-4 md:py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg font-semibold text-[10px] md:text-xs shadow transition-colors duration-200 w-fit"
+                                      style={{textShadow: 'none'}}>
+                                      Learn More
+                                    </Link>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                // Default rendering for other cards
+                <div key={pageIdx + '-' + idx + '-' + categoryGroup[0].name} className="flex flex-col items-center w-full">
+                  <div className="w-full">
+                    <div className="rounded-3xl bg-slate-800/90 shadow-2xl p-3 md:p-4 w-full">
+                      <div className="mb-4 md:mb-6 flex items-center justify-center">
+                        <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
+                          <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
+                        {categoryGroup[0].technologies.map((tech) => {
+                          const pageName = techPageMap[tech.name] ||
+                            tech.name
+                              .toLowerCase()
+                              .replace(/\s+/g, '-')
+                              .replace(/\//g, '-')
+                              .replace(/\+/, 'plus')
+                              .replace(/\./g, '')
+                              .replace(/\&/g, 'and')
+                              .replace(/[^a-z0-9\-]/g, '');
+                          return (
+                            <div
+                              key={tech.name}
+                              className={`relative flex flex-col justify-end p-2 md:p-5 rounded-2xl shadow-lg overflow-hidden h-[9.5rem] w-[20rem] ${techGradients[tech.name] || 'bg-gradient-to-br from-gray-300 to-gray-500'} transition-transform duration-300 hover:scale-105 hover:shadow-2xl`}
+                              style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.10)' }}
+                            >
+                              <img
+                                src={tech.logo}
+                                alt=""
+                                aria-hidden="true"
+                                className="absolute right-1 bottom-1 w-20 h-20 md:w-32 md:h-32 opacity-40 pointer-events-none select-none filter grayscale brightness-50"
+                                style={{ zIndex: 1 }}
+                              />
+                              <div className="relative z-10 flex flex-col gap-1 md:gap-2">
+                                <span className="text-white text-sm md:text-lg font-bold leading-tight drop-shadow-lg">{tech.name}</span>
+                                <span className="text-white/90 text-[10px] md:text-xs font-medium mb-1 md:mb-2 drop-shadow" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>
+                                  {techDescriptions[tech.name] || 'A modern technology for digital solutions.'}
+                                </span>
+                                <Link
+                                  to={`/technologies/${pageName}`}
+                                  className="mt-1 px-2 py-1 md:px-4 md:py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg font-semibold text-[10px] md:text-xs shadow transition-colors duration-200 w-fit"
+                                  style={{textShadow: 'none'}}>
+                                  Learn More
+                                </Link>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
             ))}
           </div>
         ))}
