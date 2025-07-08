@@ -74,40 +74,45 @@ export const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden hero-section"
       onMouseMove={handleMouseMove}
     >
-      {/* Background Images with Slideshow */}
-      {backgroundImages.map((bgImage, index) => {
-        // Calculate the position for sliding
-        let slidePosition;
-        
-        if (index === currentBgIndex) {
-          slidePosition = 'translate-x-0'; // Current image
-        } else if (index < currentBgIndex) {
-          slidePosition = '-translate-x-full'; // Previous images (left)
-        } else {
-          slidePosition = 'translate-x-full'; // Next images (right)
-        }
-        
-        // Special handling for wrap-around: when going from last to first image
-        if (currentBgIndex === backgroundImages.length - 1 && index === 0) {
-          slidePosition = 'translate-x-full'; // First image positioned to the right
-        }
-        
-        return (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${slidePosition}`}
-            style={{
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          />
-        );
-      })}
-      
+      {/* Mobile: ClientsSection gradient and overlays */}
+      <div className="block md:hidden absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 z-0"></div>
+      <div className="block md:hidden absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="block md:hidden absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(120,119,198,0.05),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="block md:hidden absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.05),transparent_50%)] pointer-events-none z-0"></div>
+      <div className="block md:hidden absolute inset-0 bg-[linear-gradient(rgba(120,119,198,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,119,198,0.03)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none z-0"></div>
+      {/* Desktop: Background Images with Slideshow */}
+      <div className="hidden md:block">
+        {backgroundImages.map((bgImage, index) => {
+          // Calculate the position for sliding
+          let slidePosition;
+          if (index === currentBgIndex) {
+            slidePosition = 'translate-x-0'; // Current image
+          } else if (index < currentBgIndex) {
+            slidePosition = '-translate-x-full'; // Previous images (left)
+          } else {
+            slidePosition = 'translate-x-full'; // Next images (right)
+          }
+          // Special handling for wrap-around: when going from last to first image
+          if (currentBgIndex === backgroundImages.length - 1 && index === 0) {
+            slidePosition = 'translate-x-full'; // First image positioned to the right
+          }
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-transform duration-1000 ease-in-out ${slidePosition}`}
+              style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                zIndex: 0
+              }}
+            />
+          );
+        })}
+      </div>
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
       
       {/* Full-width Headline at the Top, outside max-w-7xl */}
       <div className="absolute top-0 left-0 w-full px-2 sm:px-4 md:px-12 pt-8 md:pt-12 pb-0 md:pb-16 text-center z-30">
