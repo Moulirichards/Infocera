@@ -43,7 +43,7 @@ const Careers = () => {
       <section 
         className="pt-12 md:pt-20 pb-16 md:pb-28 relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/careersbg.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/careersbg.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -109,19 +109,23 @@ const Careers = () => {
             {jobOpenings.map((job, index) => (
               <div
                 key={index}
-                className="group bg-black p-3 md:p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-700 hover:bg-none"
+                className="group relative bg-black/90 p-3 md:p-6 rounded-2xl shadow-lg border border-gray-700 overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl hover:border-blue-400 hover:z-10"
                 style={{ background: undefined }}
               >
+                {/* Animated Gradient Border */}
+                <div className="pointer-events-none absolute -inset-1 rounded-2xl z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'linear-gradient(90deg, #0154b4 0%, #7deff6 100%)', filter: 'blur(6px)'}} />
+                {/* Floating Icon */}
+                <div className="absolute -top-5 -right-5 md:-top-6 md:-right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-75 group-hover:scale-100">
+                  <svg width="60" height="60" fill="none" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="#7deff6" fillOpacity="0.15" /><circle cx="30" cy="30" r="18" fill="#0154b4" fillOpacity="0.12" /></svg>
+                </div>
                 <div
-                  className="w-full h-full transition-all duration-300 rounded-2xl"
+                  className="relative w-full h-full transition-all duration-300 rounded-2xl z-10 group-hover:bg-gradient-to-r group-hover:from-blue-900/80 group-hover:to-cyan-900/80 group-hover:shadow-xl"
                   style={{}}
-                  onMouseEnter={e => e.currentTarget.parentElement!.setAttribute('style', 'background: linear-gradient(to right, #0154b4, #7deff6);')}
-                  onMouseLeave={e => e.currentTarget.parentElement!.setAttribute('style', '')}
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div className="flex-1">
-                      <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2">{job.title}</h3>
-                      <p className="text-xs md:text-base text-white mb-2 md:mb-4">{job.description}</p>
+                      <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 group-hover:text-cyan-300 transition-colors duration-300">{job.title}</h3>
+                      <p className="text-xs md:text-base text-white mb-2 md:mb-4 group-hover:text-blue-100 transition-colors duration-300">{job.description}</p>
                       
                       <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-gray-300">
                         <div className="flex items-center">
@@ -140,14 +144,14 @@ const Careers = () => {
                     
                     <div className="mt-2 md:mt-0 md:ml-6">
                       <Link
-                        to="/contact"
-                        className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white font-semibold rounded-lg transition-colors text-sm md:text-base"
-                        style={{ background: undefined }}
-                        onMouseEnter={e => e.currentTarget.setAttribute('style', 'background: linear-gradient(to right, #00796B, #00BCD4); color: #fff;')}
-                        onMouseLeave={e => e.currentTarget.setAttribute('style', 'background: #2563eb; color: #fff;')}
+                        to={`/careers/apply`}
+                        className="relative inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 text-sm md:text-base overflow-hidden group/button shadow-lg hover:scale-105 focus:outline-none"
                       >
-                        Apply Now
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <span className="absolute left-0 top-0 w-full h-full bg-white/10 opacity-0 group-hover/button:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                        <span className="z-10 flex items-center">
+                          Apply Now
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </span>
                       </Link>
                     </div>
                   </div>

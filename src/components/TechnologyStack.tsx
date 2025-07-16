@@ -250,11 +250,13 @@ const Switch = ({ checked, onChange }) => (
 );
 
 export const TechnologyStack = () => {
-  // Responsive page size: 1 for mobile, 2 for desktop
-  const getPageSize = () => (window.innerWidth < 768 ? 1 : 2);
-  const [pageSize, setPageSize] = useState(getPageSize());
+  // Always show 1 parent card per page for all screen sizes
+  const pageSize = 1;
+  // Remove getPageSize and setPageSize logic, and useEffect for resize
   useEffect(() => {
-    const handleResize = () => setPageSize(getPageSize());
+    const handleResize = () => {
+      // No-op, as pageSize is now fixed
+    };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -286,11 +288,13 @@ export const TechnologyStack = () => {
   }, []);
   const [currentPage, setCurrentPage] = useState(0);
   // Update current page based on scroll position
+  // Remove setCurrentPage from handleScroll to avoid premature updates
   const handleScroll = (e) => {
-    const el = e.target;
-    const pageWidth = el.offsetWidth;
-    const page = Math.round(el.scrollLeft / pageWidth);
-    setCurrentPage(page);
+    // Optionally, you can keep this for visual feedback, but it should not control the button state
+    // const el = e.target;
+    // const pageWidth = el.offsetWidth;
+    // const page = Math.round(el.scrollLeft / pageWidth);
+    // setCurrentPage(page);
   };
 
   // Scroll to page when dot is clicked
@@ -299,6 +303,7 @@ export const TechnologyStack = () => {
       const el = scrollRef.current;
       el.scrollTo({ left: pageIdx * el.offsetWidth, behavior: 'smooth' });
     }
+    setCurrentPage(pageIdx);
   }, []);
 
   return (
@@ -347,7 +352,7 @@ export const TechnologyStack = () => {
                         <div className="rounded-md md:rounded-2xl bg-slate-800/90 shadow-xl p-0.5 md:p-4 w-full h-full flex flex-col">
                           <div className="mb-4 md:mb-6 flex items-center justify-center">
                             <div className="px-1 py-0.5 md:px-6 md:py-3 rounded-md md:rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
-                              <span className="text-[10px] md:text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
+                              <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name.toUpperCase()}</span>
                             </div>
                           </div>
                           <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
@@ -397,7 +402,7 @@ export const TechnologyStack = () => {
                         <div className="rounded-2xl bg-slate-800/90 shadow-xl p-2 md:p-4 w-full h-full flex flex-col">
                           <div className="mb-4 md:mb-6 flex items-center justify-center">
                             <div className="px-3 py-2 md:px-6 md:py-3 rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
-                              <span className="text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[1].name}</span>
+                              <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[1].name.toUpperCase()}</span>
                             </div>
                           </div>
                           <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
@@ -452,7 +457,7 @@ export const TechnologyStack = () => {
                     <div className="rounded-md md:rounded-3xl bg-slate-800/90 shadow-2xl p-0.5 md:p-4 w-full">
                       <div className="mb-4 md:mb-6 flex items-center justify-center">
                         <div className="px-1 py-0.5 md:px-6 md:py-3 rounded-md md:rounded-2xl bg-white/20 backdrop-blur-md shadow-lg border border-blue-200 text-center">
-                          <span className="text-[10px] md:text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name}</span>
+                          <span className="text-[10px] md:text-base md:text-lg font-bold text-white leading-tight whitespace-pre-line drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>{categoryGroup[0].name.toUpperCase()}</span>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-3 md:gap-6 w-full">
@@ -503,6 +508,37 @@ export const TechnologyStack = () => {
           </div>
         ))}
       </div>
+      {/* Manual navigation buttons below cards, desktop only */}
+      {pages.length > 1 && (
+        <div className="hidden md:flex justify-center items-center gap-6 mt-4 mb-2">
+          <button
+            onClick={() => {
+              const newPage = currentPage <= 0 ? pages.length - 1 : currentPage - 1;
+              scrollToPage(newPage);
+            }}
+            className="bg-gradient-to-r from-blue-700 to-cyan-500 text-white rounded-full p-2 shadow-lg hover:scale-110 transition-all duration-300"
+            aria-label="Previous"
+            style={{ minWidth: 40, minHeight: 40 }}
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => {
+              const newPage = currentPage >= pages.length - 1 ? 0 : currentPage + 1;
+              scrollToPage(newPage);
+            }}
+            className="bg-gradient-to-l from-blue-700 to-cyan-500 text-white rounded-full p-2 shadow-lg hover:scale-110 transition-all duration-300"
+            aria-label="Next"
+            style={{ minWidth: 40, minHeight: 40 }}
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      )}
       {/* Swipe indicator below scroll area */}
       {pages.length > 1 && (
         <div className="flex justify-center items-center mt-2 gap-4 select-none">

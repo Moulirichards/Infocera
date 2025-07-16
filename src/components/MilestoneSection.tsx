@@ -50,13 +50,13 @@ export const MilestoneSection = () => {
   const milestones = [
     {
       icon: <Users className="h-8 w-8" />,
-      number: "500+",
+      number: "100+",
       label: "Happy Clients",
       color: "text-white"
     },
     {
       icon: <Award className="h-8 w-8" />,
-      number: "1000+",
+      number: "250+",
       label: "Projects Completed",
       color: "text-white"
     },
@@ -68,7 +68,7 @@ export const MilestoneSection = () => {
     },
     {
       icon: <Globe className="h-8 w-8" />,
-      number: "50+",
+      number: "20+",
       label: "Countries Served",
       color: "text-white"
     }

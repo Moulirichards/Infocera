@@ -43,7 +43,12 @@ export const PortfolioSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(120,119,198,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,119,198,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[#0154b4] to-[#7deff6] bg-clip-text text-transparent" style={{ fontFamily: 'EB Garamond, serif' }}>Our Portfolio</h2>
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-200 mb-3 tracking-tight leading-tight"
+            style={{ fontFamily: 'Exo, Arial, sans-serif' }}
+          >
+            Our Portfolio
+          </h2>
           <div className="w-16 md:w-24 h-1 bg-white mx-auto mb-4 md:mb-8"></div>
           <p className="text-base md:text-xl text-blue-100 max-w-xs sm:max-w-md md:max-w-3xl mx-auto">
             Discover our latest projects and see how we've helped businesses achieve their digital transformation goals.

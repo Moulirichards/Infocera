@@ -12,7 +12,7 @@ const industries = [
 ];
 
 export const IndustriesSection = () => (
-  <section className="py-20 bg-[linear-gradient(to_right,_#7deff6,_#0154b4)] text-white">
+  <section className="py-20 bg-[linear-gradient(to_right,_#0a223a,_#0154b4)] text-white">
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
       <div className="text-center mb-8 md:mb-12">
         <h2

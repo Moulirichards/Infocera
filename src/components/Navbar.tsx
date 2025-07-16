@@ -85,10 +85,10 @@ export const Navbar = () => {
   ];
 
   const serviceCategories = {
-    'online-marketing': 'Online Marketing',
+    'software': 'Software Products',
     'web-development': 'Web Design & Development',
     'mobile-apps': 'Mobile Application',
-    'software': 'Software',
+    'online-marketing': 'Online Marketing',
     'creative-design': 'Creative Design',
     'consultant': 'Consultant',
     'data-science': 'Data Science',
@@ -362,8 +362,11 @@ export const Navbar = () => {
               {activeDropdown === 'services' && (
                 <div className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-md rounded-xl shadow-2xl border border-gray-700/50 animate-fade-in z-50 p-6 min-w-[700px] max-h-[60vh] overflow-y-auto">
                   <div className="flex flex-wrap gap-12">
-                    {Object.entries(serviceCategories).map(([categoryKey, categoryName]) => (
-                      <div key={categoryKey} className="min-w-[220px]">
+                    {Object.entries(serviceCategories).map(([categoryKey, categoryName], idx) => (
+                      <div
+                        key={categoryKey}
+                        className={`min-w-[220px]${categoryKey === 'online-marketing' ? ' ml-8 md:ml-12' : ''}${categoryKey === 'consultant' ? ' ml-8 md:ml-12' : ''}${categoryKey === 'testing' ? ' ml-8 md:ml-12' : ''}${categoryKey === 'cybersecurity' ? ' ml-8 md:ml-12' : ''}`}
+                      >
                         <h4 className="font-bold text-base mb-3 uppercase bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">{categoryName}</h4>
                         <ul className="space-y-2">
                           {services

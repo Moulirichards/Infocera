@@ -150,6 +150,8 @@ import JavaFrameworks from '@/pages/technologies/JavaFrameworks';
 //   },
 // });
 
+import Apply from '@/pages/Apply';
+
 function App() {
   return (
     // <QueryClientProvider client={queryClient}>
@@ -163,6 +165,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/apply" element={<Apply />} />
           <Route path="/news" element={<News />} />
           <Route path="/blog" element={<Blog />} />
 

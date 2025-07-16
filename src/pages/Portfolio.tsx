@@ -1,6 +1,93 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ExternalLink, Github, Calendar, Tag } from 'lucide-react';
+import React from 'react';
+import styled from 'styled-components';
+
+const Button = () => {
+  return (
+    <StyledWrapper>
+      <button className="button" onClick={() => window.location.href = '/contact'}>
+        <p>Start Project</p>
+      </button>
+    </StyledWrapper>
+  );
+}
+
+const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: #00695c solid 0.15em; /* dark teal */
+    border-radius: 0.25em;
+    color: #003d33; /* dark teal for better contrast */
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+    background: transparent;
+  }
+
+  .button p {
+    z-index: 1;
+  }
+
+  .button:hover {
+    color: #fff;
+    border-color: #003d33; /* even darker teal */
+    background: #003d33;
+  }
+
+  .button:active {
+    border-color: #00251a;
+    background: #00251a;
+  }
+
+  .button::after, .button::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: #00695c;
+    opacity: 60%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+  }
+
+  .button::before {
+    left: 0;
+    transform: translateX(-8em);
+  }
+
+  .button::after {
+    right: 0;
+    transform: translateX(8em);
+  }
+
+  .button:hover:before {
+    transform: translateX(-1em);
+    background: #003d33;
+  }
+
+  .button:hover:after {
+    transform: translateX(1em);
+    background: #003d33;
+  }
+
+  .button:active:before,
+  .button:active:after {
+    background: #00251a;
+  }
+`;
 
 const Portfolio = () => {
   const projects = [
@@ -45,21 +132,21 @@ const Portfolio = () => {
       githubUrl: "#"
     },
     {
-      title: "Financial Trading Platform",
-      category: "Web Development",
-      description: "Real-time trading platform with advanced charting, portfolio management, and risk assessment tools.",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80",
-      tags: ["Vue.js", "Express", "PostgreSQL", "WebSocket"],
+      title: "Real-Time Collaboration Tool",
+      category: "Productivity Software",
+      description: "A cloud-based platform enabling teams to collaborate on documents and projects in real time with chat, video, and version control.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+      tags: ["React", "Node.js", "WebSocket", "AWS"],
       date: "2021",
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "IoT Smart Home System",
-      category: "IoT Development",
-      description: "Comprehensive smart home automation system with mobile app control and voice integration.",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
-      tags: ["React Native", "Arduino", "MQTT", "AWS IoT"],
+      title: "AI-Powered Image Recognition Platform",
+      category: "Artificial Intelligence",
+      description: "An advanced platform for automated image classification, object detection, and analytics using deep learning.",
+      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+      tags: ["Python", "TensorFlow", "Docker", "Kubernetes"],
       date: "2021",
       demoUrl: "#",
       githubUrl: "#"
@@ -76,7 +163,7 @@ const Portfolio = () => {
       <section 
         className="pt-24 md:pt-32 pb-8 md:pb-16 relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/portfoliobg.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/portfoliobg.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -177,12 +264,7 @@ const Portfolio = () => {
           <p className="text-base md:text-xl text-blue-100 mb-4 md:mb-8 max-w-xs sm:max-w-md md:max-w-2xl mx-auto">
             Let's discuss your project
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center px-4 md:px-8 py-2 md:py-4 bg-white text-black font-semibold rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base"
-          >
-            Start Project
-          </a>
+          <Button />
         </div>
       </section>
 

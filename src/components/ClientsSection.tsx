@@ -6,10 +6,10 @@ export const ClientsSection = () => {
 
   const clients = [
     { name: "LendingKart", logo: "https://logo.clearbit.com/lendingkart.com" },
-    { name: "Wipro", logo: "https://logo.clearbit.com/wipro.com" },
+    { name: "Freshworks", logo: "/freshworks.png" },
     { name: "Deloitte", logo: "https://logo.clearbit.com/deloitte.com" },
     { name: "Bosch", logo: "https://logo.clearbit.com/bosch.com" },
-    { name: "TCS", logo: "https://logo.clearbit.com/tcs.com" },
+    { name: "pixelsoft", logo: "/pixelsoft_tech.jpg" },
     { name: "ClearDekho", logo: "https://logo.clearbit.com/cleardekho.com" },
     { name: "Park+", logo: "https://logo.clearbit.com/parkplus.io" },
     { name: "Trell", logo: "https://logo.clearbit.com/trell.co" },
@@ -23,20 +23,20 @@ export const ClientsSection = () => {
     { name: "Velotio", logo: "https://logo.clearbit.com/velotio.com" },
     { name: "Ziffity", logo: "https://logo.clearbit.com/ziffity.com" },
     { name: "Accenture", logo: "https://logo.clearbit.com/accenture.com" },
-    { name: "Tata", logo: "https://logo.clearbit.com/tata.com" },
-    { name: "MakeMyTrip", logo: "https://logo.clearbit.com/makemytrip.com" },
-    { name: "Infosys", logo: "https://logo.clearbit.com/infosys.com" },
+    { name: "CleverTap", logo: "https://logo.clearbit.com/clevertap.com" },
+    { name: "Keka", logo: "https://logo.clearbit.com/keka.com" },
+    { name: "Fyle", logo: "https://logo.clearbit.com/fylehq.com" },
     { name: "Codewave", logo: "https://logo.clearbit.com/codewave.com" },
     { name: "Tvisha Technologies", logo: "https://logo.clearbit.com/tvishatech.com" },
     { name: "Prompt Softech", logo: "https://logo.clearbit.com/promptsoftech.com" },
-    { name: "HCL", logo: "https://logo.clearbit.com/hcl.com" },
+    { name: "Chargebee", logo: "https://logo.clearbit.com/chargebee.com" },
     { name: "Octal IT Solution", logo: "https://logo.clearbit.com/octalsoftware.com" },
     { name: "Techuz", logo: "https://logo.clearbit.com/techuz.com" },
     { name: "AasaanJobs", logo: "https://logo.clearbit.com/aasaanjobs.com" },
     { name: "Happay", logo: "https://logo.clearbit.com/happay.com" },
     { name: "AgroStar", logo: "https://logo.clearbit.com/agrostar.in" },
     { name: "Tech Mahindra", logo: "https://logo.clearbit.com/techmahindra.com" },
-    { name: "Cognizant", logo: "https://logo.clearbit.com/cognizant.com" },
+    { name: "NowFloats", logo: "https://logo.clearbit.com/nowfloats.com" },
   ];
 
   // Split clients into sets of 16 (since we removed 4 clients)

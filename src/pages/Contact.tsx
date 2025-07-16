@@ -118,7 +118,7 @@ const Contact = () => {
                         type="text"
                         required
                         className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white placeholder-gray-400 backdrop-blur-sm group-hover:bg-white/10"
-                        placeholder="John"
+                        placeholder=""
                       />
                     </div>
                     <div className="group">
@@ -129,7 +129,7 @@ const Contact = () => {
                         type="text"
                         required
                         className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white placeholder-gray-400 backdrop-blur-sm group-hover:bg-white/10"
-                        placeholder="Doe"
+                        placeholder=""
                       />
                     </div>
                   </div>
@@ -142,7 +142,7 @@ const Contact = () => {
                       type="email"
                       required
                       className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white placeholder-gray-400 backdrop-blur-sm group-hover:bg-white/10"
-                      placeholder="john.doe@example.com"
+                      placeholder=""
                     />
                   </div>
                   
@@ -153,7 +153,7 @@ const Contact = () => {
                     <input
                       type="tel"
                       className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white placeholder-gray-400 backdrop-blur-sm group-hover:bg-white/10"
-                      placeholder="+91 98765 43210"
+                      placeholder=""
                     />
                   </div>
                   
@@ -203,10 +203,36 @@ const Contact = () => {
                       Reset
                     </button>
                   </div>
-                  
                   <p className="text-xs text-gray-400 text-center mt-2">
                     * Required fields. We'll get back to you within 24 hours.
                   </p>
+                  <div style={{ height: '2.5rem' }} />
+                  <div className="flex justify-center mb-2">
+                    <div className="relative w-full max-w-md rounded-2xl p-6 text-center shadow-2xl border border-blue-400/30 bg-white/10 backdrop-blur-md overflow-hidden group">
+                      {/* Animated gradient border */}
+                      <div className="absolute -inset-1 rounded-2xl z-0 animate-gradient-x bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 opacity-60 blur-lg group-hover:opacity-90 transition-all duration-700" style={{ pointerEvents: 'none' }} />
+                      {/* Icon */}
+                      <div className="relative z-10 flex justify-center mb-3 group/icon">
+                        <svg className="w-14 h-14 text-cyan-200 drop-shadow-lg transition-transform duration-500 group-hover/icon:scale-110 group-hover/icon:text-blue-300" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+                          <rect x="3" y="5" width="18" height="14" rx="4" fill="url(#chatGradient)" />
+                          <path d="M7 10h10M7 14h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <ellipse cx="19" cy="19" rx="2" ry="2" fill="url(#chatGradient)" className="animate-pulse-slow" />
+                          <defs>
+                            <linearGradient id="chatGradient" x1="3" y1="5" x2="21" y2="19" gradientUnits="userSpaceOnUse">
+                              <stop stopColor="#67e8f9" />
+                              <stop offset="1" stopColor="#a78bfa" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
+                      <h3 className="relative z-10 text-lg md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-blue-100 to-purple-200 tracking-tight leading-tight mb-2" style={{ fontFamily: 'Exo, Arial, sans-serif' }}>
+                        We design. We build. We scale.
+                      </h3>
+                      <p className="relative z-10 text-base md:text-lg text-blue-100 font-medium" style={{ fontFamily: 'Exo, Arial, sans-serif' }}>
+                        Custom IT solutions for your vision.
+                      </p>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -242,7 +268,7 @@ const Contact = () => {
                       <div className="flex-1">
                         <h4 className="font-semibold text-white text-sm md:text-base mb-1">Phone</h4>
                         <p className="text-blue-200 text-sm md:text-base font-medium">+91 8815587953</p>
-                        <p className="text-blue-300/70 text-xs">Available 24/7 for urgent inquiries</p>
+                        <p className="text-blue-300/70 text-xs">Reach us during business hours for prompt assistance.</p>
                       </div>
                     </div>
                     
@@ -286,7 +312,7 @@ const Contact = () => {
                             <span className="text-orange-300">Mon - Fri:</span> 9:00 AM - 6:00 PM
                           </p>
                           <p className="text-orange-200 text-sm md:text-base font-medium">
-                            <span className="text-orange-300">Sat:</span> 10:00 AM - 4:00 PM
+                            <span className="text-orange-300">Sat:</span> 10:00 AM - 2:00 PM
                           </p>
                         </div>
                         <p className="text-orange-300/70 text-xs mt-1">Sunday: Closed</p>

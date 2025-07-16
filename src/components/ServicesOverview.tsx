@@ -7,10 +7,10 @@ export const ServicesOverview = () => {
   const navigate = useNavigate();
   const services = [
     {
-      icon: TrendingUp,
-      title: "Online Marketing",
-      description: "Comprehensive digital marketing solutions including SEO, SEM, and social media marketing.",
-      path: "/services/social-media-marketing",
+      icon: Monitor,
+      title: "Software Products",
+      description: "Enterprise software including CRM, HR, inventory, and management systems.",
+      path: "/services/crm-software",
       gradient: "from-blue-500 to-cyan-500"
     },
     {
@@ -28,10 +28,10 @@ export const ServicesOverview = () => {
       gradient: "from-green-500 to-teal-500"
     },
     {
-      icon: Monitor,
-      title: "Software Solutions",
-      description: "Enterprise software including CRM, HR, inventory, and management systems.",
-      path: "/services/crm-software",
+      icon: TrendingUp,
+      title: "Online Marketing",
+      description: "Comprehensive digital marketing solutions including SEO, SEM, and social media marketing.",
+      path: "/services/social-media-marketing",
       gradient: "from-orange-500 to-red-500"
     },
     {

@@ -92,20 +92,19 @@ const Services = () => {
   }, []);
   const serviceCategories = [
     {
-      title: "Online Marketing",
-      icon: TrendingUp,
+      title: "Software Products",
+      icon: Monitor,
       services: [
-        { name: 'SEO Services', path: '/services/seo-services' },
-        { name: 'Search Engine Marketing', path: '/services/search-engine-marketing' },
-        { name: 'Social Media Marketing', path: '/services/social-media-marketing' },
-        { name: 'Pay Per Click Management', path: '/services/pay-per-click-management' },
-        { name: 'SEO Copywriting', path: '/services/seo-copywriting' },
-        { name: 'Digital Marketing', path: '/services/digital-marketing' },
-        { name: 'Brand Consulting', path: '/services/brand-consulting' },
-        { name: 'Lead Management System', path: '/services/lead-management-system' }
+        { name: 'HR and Payroll Management Software', path: '/services/hr-payroll-software' },
+        { name: 'Jewellery Software', path: '/services/jewellery-software' },
+        { name: 'CRM Software', path: '/services/crm-software' },
+        { name: 'Real Estate Software', path: '/services/real-estate-software' },
+        { name: 'Inventory Management Software', path: '/services/inventory-management-software' },
+        { name: 'Hospital Management Software', path: '/services/hospital-management-software' },
+        { name: 'School Management Software', path: '/services/school-management-software' }
       ],
       gradient: "from-blue-500 to-cyan-500",
-      learnMorePath: '/services/social-media-marketing'
+      learnMorePath: '/services/crm-software'
     },
     {
       title: "Web Design & Development",
@@ -139,19 +138,20 @@ const Services = () => {
       learnMorePath: '/services/mobile-apps'
     },
     {
-      title: "Software",
-      icon: Monitor,
+      title: "Online Marketing",
+      icon: TrendingUp,
       services: [
-        { name: 'HR and Payroll Management Software', path: '/services/hr-payroll-software' },
-        { name: 'Jewellery Software', path: '/services/jewellery-software' },
-        { name: 'CRM Software', path: '/services/crm-software' },
-        { name: 'Real Estate Software', path: '/services/real-estate-software' },
-        { name: 'Inventory Management Software', path: '/services/inventory-management-software' },
-        { name: 'Hospital Management Software', path: '/services/hospital-management-software' },
-        { name: 'School Management Software', path: '/services/school-management-software' }
+        { name: 'SEO Services', path: '/services/seo-services' },
+        { name: 'Search Engine Marketing', path: '/services/search-engine-marketing' },
+        { name: 'Social Media Marketing', path: '/services/social-media-marketing' },
+        { name: 'Pay Per Click Management', path: '/services/pay-per-click-management' },
+        { name: 'SEO Copywriting', path: '/services/seo-copywriting' },
+        { name: 'Digital Marketing', path: '/services/digital-marketing' },
+        { name: 'Brand Consulting', path: '/services/brand-consulting' },
+        { name: 'Lead Management System', path: '/services/lead-management-system' }
       ],
       gradient: "from-orange-500 to-red-500",
-      learnMorePath: '/services/crm-software'
+      learnMorePath: '/services/social-media-marketing'
     },
     {
       title: "Creative Design",

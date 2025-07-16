@@ -106,7 +106,12 @@ export const TestimonialsCarousel = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.08),transparent_70%)] pointer-events-none"></div>
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-4" style={{ fontFamily: 'EB Garamond, serif' }}>What Our Clients Say</h2>
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-cyan-200 mb-3 tracking-tight leading-tight"
+            style={{ fontFamily: 'Exo, Arial, sans-serif' }}
+          >
+            What Our Clients Say
+          </h2>
           <p className="text-base md:text-xl text-blue-100 max-w-xs sm:max-w-md md:max-w-3xl mx-auto">
             Don't just take our word for it. Here's what industry leaders say about our services.
           </p>

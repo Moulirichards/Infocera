@@ -92,7 +92,7 @@ const iconicMoments = [
     year: 2023,
     icon: <TrendingUp size={80} stroke="#f472b6" strokeWidth={1.5} />,
     title: '2023',
-    description: 'Celebrated a decade of growth, innovation, and client success—continuing to shape the future of technology.'
+    description: 'Launched groundbreaking AI-driven solutions, expanded into new international markets, and strengthened our commitment to sustainability and social impact.'
   },
   {
     year: 2025,
@@ -110,7 +110,7 @@ function IconicMomentsSection() {
     <section 
       className="w-full py-20 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/iconicbg.webp')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/iconicbg.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -125,7 +125,7 @@ function IconicMomentsSection() {
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Iconic Moments in Our History</h2>
         <p className="text-xl text-center text-blue-100 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-        From a humble garage to a global tech partner, Infocera transformed vision into reality. Empowering startups and enterprises alike, we've shaped digital journeys with innovation at every step.
+        From a humble beginning to a global tech partner, Infocera transformed vision into reality. Empowering startups and enterprises alike, we've shaped digital journeys with innovation at every step.
         </p>
         {/* Enhanced Timeline */}
         <div className="relative flex items-center justify-center mb-16">
@@ -290,9 +290,9 @@ function useCountUp(target, duration = 1200, start = 0) {
 const About = () => {
   const stats = [
     { icon: Users, label: 'Team Members', value: '150+' },
-    { icon: Target, label: 'Projects Completed', value: '500+' },
-    { icon: Award, label: 'Awards Won', value: '25+' },
-    { icon: Globe, label: 'Countries Served', value: '30+' }
+    { icon: Target, label: 'Projects Completed', value: '250+' },
+    { icon: TrendingUp, label: 'Years in Business', value: '10+' },
+    { icon: Globe, label: 'Countries Served', value: '20+' }
   ];
 
   const team = [
@@ -369,9 +369,9 @@ const About = () => {
       
       {/* Hero Section */}
       <section
-        className="pt-40 md:pt-60 pb-32 md:pb-56"
+        className="pt-28 md:pt-44 pb-20 md:pb-32"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('/aboutbg.webp')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('/aboutbg.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -557,7 +557,7 @@ const About = () => {
               </div>
           {/* Right: Map */}
           <div className="flex-[2] flex justify-center items-center w-full relative">
-            <img src="/map1.png" alt="World Map" className="w-full h-auto object-contain lg:-ml-24" />
+            <img src="/map11.png" alt="World Map" className="w-full h-auto object-contain lg:-ml-24" />
             </div>
             </div>
         {/* Bottom Row: Stats */}
@@ -567,7 +567,7 @@ const About = () => {
             <div className="text-white text-xl font-medium">Countries where we are providing the services</div>
               </div>
           <div className="flex-1 bg-transparent border border-blue-200 rounded-2xl p-10 text-center flex flex-col justify-center items-center">
-            <div className="text-5xl font-extrabold text-white mb-2">200+</div>
+            <div className="text-5xl font-extrabold text-white mb-2">100+</div>
             <div className="text-white text-xl font-medium">Service clients across the globe</div>
             </div>
           <div className="flex-1 bg-transparent border border-blue-200 rounded-2xl p-10 text-center flex flex-col justify-center items-center">
