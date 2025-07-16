@@ -43,7 +43,7 @@ const Careers = () => {
       <section 
         className="pt-12 md:pt-20 pb-16 md:pb-28 relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/careersbg.png')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/careersbg.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

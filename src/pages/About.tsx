@@ -110,7 +110,7 @@ function IconicMomentsSection() {
     <section 
       className="w-full py-20 relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/iconicbg.png')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('/iconicbg.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -371,7 +371,7 @@ const About = () => {
       <section
         className="pt-28 md:pt-44 pb-20 md:pb-32"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('/aboutbg.png')`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('/aboutbg.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
