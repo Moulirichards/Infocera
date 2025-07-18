@@ -292,9 +292,9 @@ const Contact = () => {
                       <div className="flex-1">
                         <h4 className="font-semibold text-white text-sm md:text-base mb-1">Address</h4>
                         <p className="text-emerald-200 text-sm md:text-base font-medium leading-relaxed">
-                          8th Floor, HB Twin Tower<br />
-                          Netaji Subhash Place, Pitampura<br />
-                          <span className="text-emerald-300 font-semibold">NEW DELHI - 110034</span>
+                          First Floor, L29-L34<br />
+                          Block L, Connaught Place<br />
+                          <span className="text-emerald-300 font-semibold">New Delhi, Delhi - 110001</span>
                         </p>
                         <p className="text-emerald-300/70 text-xs mt-1">Main office - Visit us anytime</p>
                       </div>
@@ -328,7 +328,7 @@ const Contact = () => {
                 <div className="w-full max-w-xs aspect-square rounded-xl overflow-hidden border-2 border-brand-primary mx-auto mb-2 md:mb-4">
                   <iframe
                     title="Infocera Location"
-                    src="https://www.google.com/maps?q=8th+Floor+HB+TWIN+TOWER+Netaji+subhash+place+PITAMPURA+DELHI+110034&output=embed"
+                    src="https://www.google.com/maps?q=First+Floor,+L29-L34,+Block+L,+Connaught+Place,+New+Delhi,+Delhi+-+110001&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -339,7 +339,7 @@ const Contact = () => {
                 </div>
                 <div className="flex justify-center">
                   <a
-                    href="https://www.google.com/maps?q=8th+Floor+HB+TWIN+TOWER+Netaji+subhash+place+PITAMPURA+DELHI+110034"
+                    href="https://www.google.com/maps?q=First+Floor,+L29-L34,+Block+L,+Connaught+Place,+New+Delhi,+Delhi+-+110001"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-1 px-3 md:px-4 py-1.5 md:py-2 bg-brand-primary text-white rounded-lg font-semibold shadow hover:bg-brand-primary/90 transition text-xs md:text-base"

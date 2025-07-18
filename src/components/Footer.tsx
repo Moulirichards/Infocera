@@ -291,13 +291,13 @@ export const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 mb-1">
                 <MapPin className="h-12 w-12 text-brand-primary" />
-                <span className="text-gray-200 text-lg font-medium">8th Floor, HB Twin Tower, Netaji Subhash Place, Pitampura, NEW DELHI - 110034</span>
+                <span className="text-gray-200 text-lg font-medium">First Floor, L29-L34, Block L<br />Connaught Place, New Delhi, Delhi - 110001</span>
               </div>
               {/* Google Maps Embed */}
               <div className="w-full max-w-xs aspect-square rounded-xl overflow-hidden border-2 border-brand-primary mx-auto mb-1">
                 <iframe
                   title="Infocera Location"
-                  src="https://www.google.com/maps?q=8th+Floor+HB+TWIN+TOWER+Netaji+subhash+place+PITAMPURA+DELHI+110034&output=embed"
+                  src="https://www.google.com/maps?q=First+Floor,+L29-L34,+Block+L,+Connaught+Place,+New+Delhi,+Delhi+-+110001&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -308,7 +308,7 @@ export const Footer = () => {
               </div>
               <div className="flex justify-center mt-0">
                 <a
-                  href="https://www.google.com/maps?q=8th+Floor+HB+TWIN+TOWER+Netaji+subhash+place+PITAMPURA+DELHI+110034"
+                  href="https://www.google.com/maps?q=First+Floor,+L29-L34,+Block+L,+Connaught+Place,+New+Delhi,+Delhi+-+110001"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-0 px-3 py-1.5 bg-brand-primary text-white rounded-lg font-semibold shadow hover:bg-brand-primary/90 transition text-sm"
@@ -497,13 +497,13 @@ export const Footer = () => {
                 <div className="w-full flex flex-col items-center bg-black/40 rounded-xl p-3 mb-2">
                   <div className="flex items-center justify-center mb-2">
                     <MapPin className="h-10 w-10 text-brand-primary mr-2" />
-                    <span className="text-gray-200 text-xs font-medium text-center break-words">8th Floor, HB Twin Tower, Netaji Subhash Place, Pitampura, NEW DELHI - 110034</span>
+                    <span className="text-gray-200 text-xs font-medium text-center break-words">First Floor, L29-L34, Block L, Connaught Place, New Delhi, Delhi - 110001</span>
                   </div>
                   {/* Google Maps Embed */}
                   <div className="w-full max-w-[120px] aspect-square rounded-xl overflow-hidden border-2 border-brand-primary mx-auto mb-2">
                     <iframe
                       title="Infocera Location"
-                      src="https://www.google.com/maps?q=8th+Floor+HB+TWIN+TOWER+Netaji+subhash+place+PITAMPURA+DELHI+110034&output=embed"
+                      src="https://www.google.com/maps?q=First+Floor,+L29-L34,+Block+L,+Connaught+Place,+New+Delhi,+Delhi+-+110001&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -514,7 +514,7 @@ export const Footer = () => {
                   </div>
                   <div className="flex justify-center">
                     <a
-                      href="https://www.google.com/maps?q=8th+Floor+HB+TWIN+TOWER+Netaji+subhash+place+PITAMPURA+DELHI+110034"
+                      href="https://www.google.com/maps?q=First+Floor,+L29-L34,+Block+L,+Connaught+Place,+New+Delhi,+Delhi+-+110001"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block mt-1 px-3 py-2 bg-brand-primary text-white rounded-lg font-semibold shadow hover:bg-brand-primary/90 transition text-xs"
