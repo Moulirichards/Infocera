@@ -10,28 +10,132 @@ const Careers = () => {
       department: "Engineering",
       location: "Remote",
       type: "Full-time",
-      description: "Build scalable web applications using React, Node.js, and cloud technologies."
+      shortDescription: "Build scalable web applications using React, Node.js, and cloud technologies.",
+      details: {
+        responsibilities: [
+          "Design, develop, and maintain scalable web applications using React and Node.js.",
+          "Collaborate with cross-functional teams to define, design, and ship new features.",
+          "Write clean, maintainable, and efficient code following best practices.",
+          "Participate in code reviews and mentor junior developers.",
+          "Integrate with cloud services (AWS, Azure, or GCP) and manage deployments."
+        ],
+        skills: [
+          "Strong proficiency in JavaScript, TypeScript, React, and Node.js.",
+          "Experience with RESTful APIs and microservices architecture.",
+          "Familiarity with cloud platforms (AWS, Azure, or GCP).",
+          "Knowledge of CI/CD pipelines and version control (Git).",
+          "Excellent problem-solving and communication skills."
+        ],
+        qualifications: [
+          "Bachelor’s or Master’s degree in Computer Science or related field.",
+          "5+ years of experience in full stack development.",
+          "Experience working in agile teams."
+        ],
+        benefits: [
+          "Competitive salary and performance bonuses.",
+          "Remote work flexibility.",
+          "Learning and development opportunities."
+        ]
+      }
     },
     {
       title: "DevOps Engineer",
       department: "Infrastructure",
-      location: "San Francisco, CA",
+      location: "Remote",
       type: "Full-time",
-      description: "Manage cloud infrastructure and implement CI/CD pipelines for our development teams."
+      shortDescription: "Manage cloud infrastructure and implement CI/CD pipelines for our development teams.",
+      details: {
+        responsibilities: [
+          "Design, implement, and manage CI/CD pipelines.",
+          "Automate infrastructure provisioning and deployments.",
+          "Monitor system performance and troubleshoot issues.",
+          "Ensure security and compliance of cloud environments.",
+          "Collaborate with development teams to optimize workflows."
+        ],
+        skills: [
+          "Experience with AWS, Azure, or GCP cloud platforms.",
+          "Proficiency in scripting languages (Bash, Python, etc.).",
+          "Knowledge of Docker, Kubernetes, and container orchestration.",
+          "Familiarity with infrastructure as code tools (Terraform, CloudFormation).",
+          "Strong understanding of networking and security best practices."
+        ],
+        qualifications: [
+          "Bachelor’s degree in Computer Science, Engineering, or related field.",
+          "3+ years of experience in DevOps or related roles.",
+          "Relevant certifications (AWS Certified DevOps Engineer, etc.) are a plus."
+        ],
+        benefits: [
+          "Attractive compensation package.",
+          "Opportunities for professional growth.",
+          "Flexible work arrangements."
+        ]
+      }
     },
     {
       title: "UI/UX Designer",
       department: "Design",
       location: "Remote",
       type: "Full-time",
-      description: "Create beautiful and intuitive user experiences for our web and mobile applications."
+      shortDescription: "Create beautiful and intuitive user experiences for our web and mobile applications.",
+      details: {
+        responsibilities: [
+          "Design user interfaces for web and mobile applications.",
+          "Conduct user research and usability testing.",
+          "Create wireframes, prototypes, and high-fidelity mockups.",
+          "Collaborate with developers to ensure design feasibility.",
+          "Maintain and evolve the company’s design system."
+        ],
+        skills: [
+          "Proficiency in design tools (Figma, Sketch, Adobe XD, etc.).",
+          "Strong portfolio showcasing UI/UX design work.",
+          "Understanding of user-centered design principles.",
+          "Ability to communicate design ideas effectively.",
+          "Attention to detail and creativity."
+        ],
+        qualifications: [
+          "Bachelor’s degree in Design, HCI, or related field.",
+          "2+ years of experience in UI/UX design.",
+          "Experience working in agile environments."
+        ],
+        benefits: [
+          "Remote work and flexible hours.",
+          "Creative and collaborative work environment.",
+          "Opportunities for skill development."
+        ]
+      }
     },
     {
       title: "Data Scientist",
       department: "Analytics",
-      location: "New York, NY",
+      location: "Remote",
       type: "Full-time",
-      description: "Analyze complex datasets to drive business insights and build predictive models."
+      shortDescription: "Analyze complex datasets to drive business insights and build predictive models.",
+      details: {
+        responsibilities: [
+          "Collect, process, and analyze large datasets from various sources.",
+          "Develop predictive models and machine learning algorithms.",
+          "Visualize data and communicate findings to stakeholders.",
+          "Collaborate with engineering and product teams.",
+          "Stay updated with the latest data science trends and technologies."
+        ],
+        skills: [
+          "Strong programming skills in Python or R.",
+          "Experience with machine learning frameworks (scikit-learn, TensorFlow, etc.).",
+          "Proficiency in SQL and data visualization tools.",
+          "Statistical analysis and problem-solving skills.",
+          "Excellent communication and teamwork abilities."
+        ],
+        qualifications: [
+          "Bachelor’s or Master’s degree in Data Science, Statistics, or related field.",
+          "2+ years of experience in data science or analytics roles.",
+          "Experience with big data technologies is a plus."
+        ],
+        benefits: [
+          "Competitive salary and bonuses.",
+          "Opportunities for research and innovation.",
+          "Supportive and inclusive team culture."
+        ]
+      }
     }
   ];
 
@@ -109,24 +213,56 @@ const Careers = () => {
             {jobOpenings.map((job, index) => (
               <div
                 key={index}
-                className="group relative bg-black/90 p-3 md:p-6 rounded-2xl shadow-lg border border-gray-700 overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl hover:border-blue-400 hover:z-10"
+                className="group relative bg-black/90 p-3 md:p-6 rounded-2xl shadow-lg border border-gray-700 overflow-hidden transition-all duration-300 hover:scale-[1.025] hover:shadow-2xl hover:border-blue-400 hover:z-10 group-hover:bg-gradient-to-r group-hover:from-blue-900/80 group-hover:to-cyan-900/80"
                 style={{ background: undefined }}
               >
-                {/* Animated Gradient Border */}
-                <div className="pointer-events-none absolute -inset-1 rounded-2xl z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'linear-gradient(90deg, #0154b4 0%, #7deff6 100%)', filter: 'blur(6px)'}} />
                 {/* Floating Icon */}
                 <div className="absolute -top-5 -right-5 md:-top-6 md:-right-6 z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-75 group-hover:scale-100">
                   <svg width="60" height="60" fill="none" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="#7deff6" fillOpacity="0.15" /><circle cx="30" cy="30" r="18" fill="#0154b4" fillOpacity="0.12" /></svg>
                 </div>
                 <div
-                  className="relative w-full h-full transition-all duration-300 rounded-2xl z-10 group-hover:bg-gradient-to-r group-hover:from-blue-900/80 group-hover:to-cyan-900/80 group-hover:shadow-xl"
+                  className="relative w-full h-full transition-all duration-300 rounded-2xl z-10 group-hover:shadow-xl"
                   style={{}}
                 >
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div className="flex-1">
                       <h3 className="text-base md:text-xl font-bold text-white mb-1 md:mb-2 group-hover:text-cyan-300 transition-colors duration-300">{job.title}</h3>
-                      <p className="text-xs md:text-base text-white mb-2 md:mb-4 group-hover:text-blue-100 transition-colors duration-300">{job.description}</p>
-                      
+                      <p className="text-xs md:text-base text-white mb-2 md:mb-4 group-hover:text-blue-100 transition-colors duration-300">{job.shortDescription}</p>
+                      {/* Detailed Job Description */}
+                      <div className="mb-2 md:mb-4">
+                        <details className="mb-1">
+                          <summary className="cursor-pointer font-semibold text-blue-200">Roles & Responsibilities</summary>
+                          <ul className="list-disc ml-6 mt-1 text-sm md:text-base text-white">
+                            {job.details.responsibilities.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </details>
+                        <details className="mb-1">
+                          <summary className="cursor-pointer font-semibold text-blue-200">Required Skills</summary>
+                          <ul className="list-disc ml-6 mt-1 text-sm md:text-base text-white">
+                            {job.details.skills.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </details>
+                        <details className="mb-1">
+                          <summary className="cursor-pointer font-semibold text-blue-200">Desired Qualifications</summary>
+                          <ul className="list-disc ml-6 mt-1 text-sm md:text-base text-white">
+                            {job.details.qualifications.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </details>
+                        <details>
+                          <summary className="cursor-pointer font-semibold text-blue-200">Benefits</summary>
+                          <ul className="list-disc ml-6 mt-1 text-sm md:text-base text-white">
+                            {job.details.benefits.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </details>
+                      </div>
                       <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-gray-300">
                         <div className="flex items-center">
                           <MapPin className="h-3 md:h-4 w-3 md:w-4 mr-1" />
@@ -141,11 +277,10 @@ const Careers = () => {
                         </span>
                       </div>
                     </div>
-                    
                     <div className="mt-2 md:mt-0 md:ml-6">
                       <Link
                         to={`/careers/apply`}
-                        className="relative inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 text-sm md:text-base overflow-hidden group/button shadow-lg hover:scale-105 focus:outline-none"
+                        className="relative inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 text-sm md:text-base overflow-hidden group/button shadow-lg hover:scale-105 focus:outline-none hover:bg-gradient-to-l hover:from-cyan-500 hover:to-blue-600 hover:text-white"
                       >
                         <span className="absolute left-0 top-0 w-full h-full bg-white/10 opacity-0 group-hover/button:opacity-100 transition-opacity duration-500 pointer-events-none" />
                         <span className="z-10 flex items-center">

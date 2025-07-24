@@ -214,14 +214,10 @@ const StyledForm = () => {
     <StyledWrapper>
       <div className="login-box">
         <p style={{ color: '#2563eb' }}>Get Started Today</p>
-        <form>
+        <form action="https://send.pageclip.co/925ywLZAi3feiSNDU7mujOzKoLmk9lAZ/hero-section-contact-form" className="pageclip-form" method="post">
           <div className="user-box">
-            <input required name="firstName" type="text" />
-            <label>First Name</label>
-          </div>
-          <div className="user-box">
-            <input required name="lastName" type="text" />
-            <label>Last Name</label>
+            <input required name="name" type="text" />
+            <label>Name</label>
           </div>
           <div className="user-box">
             <input required name="email" type="email" />
@@ -235,13 +231,13 @@ const StyledForm = () => {
             <textarea required name="message" rows={4} />
             <label>Tell us about your project</label>
           </div>
-          <a href="#" onClick={(e) => e.preventDefault()}>
+          <button type="submit" style={{ position: 'relative', display: 'inline-block', padding: '10px 20px', fontWeight: 'bold', color: '#fff', fontSize: '16px', textDecoration: 'none', textTransform: 'uppercase', overflow: 'hidden', transition: '.5s', marginTop: '40px', letterSpacing: '3px', border: 'none', background: 'transparent', cursor: 'pointer' }}>
             <span />
             <span />
             <span />
             <span />
             Send Message
-          </a>
+          </button>
         </form>
       </div>
     </StyledWrapper>
@@ -307,7 +303,7 @@ export const ContactCTA = () => {
                 </div>
                 <div>
                   <p className="text-sm md:text-base font-semibold">Visit Us</p>
-                  <p className="text-xs md:text-sm text-blue-200">8th Floor, HB Twin Tower<br />Netaji Subhash Place, Pitampura<br />NEW DELHI - 110034</p>
+                  <p className="text-xs md:text-sm text-blue-200">First Floor, L29-L34, Block L<br />Connaught Place, New Delhi, Delhi - 110001</p>
                 </div>
               </div>
             </div>

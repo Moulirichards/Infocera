@@ -151,6 +151,7 @@ import JavaFrameworks from '@/pages/technologies/JavaFrameworks';
 // });
 
 import Apply from '@/pages/Apply';
+import { ChatBot } from './components/ui/ChatBot';
 
 function App() {
   return (
@@ -297,6 +298,7 @@ function App() {
           <Route path="/services/performance-testing" element={<PerformanceTesting />} />
           <Route path="/services/ecommerce-development" element={<EcommerceDevelopment />} />
         </Routes>
+        <ChatBot />
       </Router>
     // </QueryClientProvider>
   );
