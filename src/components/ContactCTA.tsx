@@ -214,7 +214,7 @@ const StyledForm = () => {
     <StyledWrapper>
       <div className="login-box">
         <p style={{ color: '#2563eb' }}>Get Started Today</p>
-        <form action="https://send.pageclip.co/925ywLZAi3feiSNDU7mujOzKoLmk9lAZ/hero-section-contact-form" className="pageclip-form" method="post">
+        <form action="https://send.pageclip.co/Vt9iNFW6dHpSiz1VUTUOXQ00Qpz7XQVc/hero-section-contact-form" className="pageclip-form" method="post">
           <div className="user-box">
             <input required name="name" type="text" />
             <label>Name</label>
