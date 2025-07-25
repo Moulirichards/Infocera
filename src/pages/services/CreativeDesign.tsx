@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Palette, Layers, Image, FileText, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CreativeDesign = () => {
+  const navigate = useNavigate();
   const services = [
     {
       name: "UI/UX Design",
@@ -42,7 +43,7 @@ const CreativeDesign = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Creative Design</h1>
             <p className="text-xl mb-8">Bring your brand to life with innovative, eye-catching creative design solutions for digital and print.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-pink-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-pink-100 transition-all duration-300">Start Creative Project</button>
+              <button className="bg-white text-pink-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-pink-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Creative Project</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

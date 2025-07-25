@@ -10,14 +10,14 @@ const Flutter = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-800 to-cyan-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Flutter Development Services
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl mb-8 text-white font-semibold">
                 Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase with Flutter.
               </p>
               <Link

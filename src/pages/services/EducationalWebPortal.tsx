@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const faqs = [
   { q: 'What is an educational web portal?', a: 'An educational web portal is an online platform that connects students, teachers, and institutions, providing resources, courses, and collaboration tools.' },
@@ -12,6 +13,7 @@ const faqs = [
 ];
 
 export default function EducationalWebPortal() {
+  const navigate = useNavigate();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   return (
     <div className="min-h-screen service-page flex flex-col">
@@ -23,7 +25,7 @@ export default function EducationalWebPortal() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Educational Web Portal</h1>
             <p className="text-xl mb-8">Empower learning with interactive, user-friendly educational portals for schools, colleges, and training institutes.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300">Start Education Project</button>
+              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Education Project</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

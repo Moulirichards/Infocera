@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Layers, Code, Database, TrendingUp, MonitorSmartphone, Globe } from 'lucide-react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const industries = [
   'Finance',
@@ -35,6 +36,7 @@ const faqs = [
 ];
 
 export default function Apache() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -50,7 +52,7 @@ export default function Apache() {
                 Host, manage, and scale your web applications with the world's most popular web server.
               </p>
               <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-blue-700 text-white hover:bg-blue-800">Get Started</Button>
+                <Button size="lg" className="bg-yellow-700 text-white hover:bg-yellow-800" onClick={() => navigate('/contact')}>Get Started</Button>
                 {/* Mobile: Small logo beside button, Desktop: Hidden */}
                 <img 
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" 
@@ -140,7 +142,7 @@ export default function Apache() {
       <section className="py-16 bg-gradient-to-r from-blue-200 to-blue-400">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Ready to host with Apache?</h2>
-          <Button size="lg" className="bg-white text-blue-800 hover:bg-blue-100">Contact Us</Button>
+          <Button size="lg" className="bg-white text-yellow-800 hover:bg-yellow-100" onClick={() => navigate('/contact')}>Contact Us</Button>
         </div>
       </section>
       <Footer />

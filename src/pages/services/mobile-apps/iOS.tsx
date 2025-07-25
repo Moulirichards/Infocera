@@ -10,14 +10,14 @@ const iOS = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-50 to-slate-50">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-gray-800 to-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 iOS App Development
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl mb-8 text-white font-semibold">
                 Create premium iOS applications with native Swift development for the App Store.
               </p>
               <Link

@@ -17,7 +17,7 @@ const NaturalLanguageProcessing = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Natural Language Processing
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl mb-8 text-gray-800 font-semibold">
                 Enable machines to understand, interpret, and generate human language with advanced NLP technologies.
               </p>
               <Link

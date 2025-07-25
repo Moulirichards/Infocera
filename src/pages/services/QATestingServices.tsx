@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CheckCircle, Bug, Target, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const QATestingServices = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -14,7 +15,7 @@ const QATestingServices = () => {
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">QA Testing Services</h1>
             <p className="text-xl mb-8">Ensure the quality and reliability of your software with our comprehensive QA and testing solutions.</p>
-            <button className="bg-white text-red-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-red-100 transition-all duration-300">Get QA Help</button>
+            <button className="bg-white text-red-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-red-100 transition-all duration-300" onClick={() => navigate('/contact')}>Get QA Help</button>
           </div>
           <div className="relative flex justify-center">
             <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-32">

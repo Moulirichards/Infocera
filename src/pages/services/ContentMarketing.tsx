@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { FileText, Users, TrendingUp, Heart, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ContentMarketing = () => {
+  const navigate = useNavigate();
   const services = [
     {
       name: "Content Strategy Development",
@@ -38,7 +39,7 @@ const ContentMarketing = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Content Marketing</h1>
             <p className="text-xl mb-8">Engage your audience and drive conversions with compelling, strategic content tailored to your brand and goals.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-orange-600 font-bold px-8 py-4 rounded-xl shadow hover:bg-orange-100 transition-all duration-300">Start Content Strategy</button>
+              <button className="bg-white text-orange-600 font-bold px-8 py-4 rounded-xl shadow hover:bg-orange-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Content Strategy</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

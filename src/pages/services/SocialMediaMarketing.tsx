@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Share2, Users, TrendingUp, Target, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SocialMediaMarketing = () => {
+  const navigate = useNavigate();
   const platforms = [
     {
       name: "Facebook Marketing",
@@ -38,7 +39,7 @@ const SocialMediaMarketing = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Social Media Marketing</h1>
             <p className="text-xl mb-8">Grow your brand and engage your audience with creative, data-driven social media marketing strategies.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-pink-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-pink-100 transition-all duration-300">Start Social Campaign</button>
+              <button className="bg-white text-pink-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-pink-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Social Campaign</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

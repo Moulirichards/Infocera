@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Layers, Code, Database, TrendingUp, MonitorSmartphone, Globe } from 'lucide-react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const industries = [
   'Finance',
@@ -35,6 +36,7 @@ const faqs = [
 ];
 
 export default function SystemTesting() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -50,7 +52,7 @@ export default function SystemTesting() {
                 Validate your entire application with comprehensive system testing services.
               </p>
               <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-pink-700 text-white hover:bg-pink-800">Get Started</Button>
+                <Button size="lg" className="bg-pink-700 text-white hover:bg-pink-800" onClick={() => navigate('/contact')}>Get Started</Button>
                 {/* Mobile: Small logo beside button, Desktop: Hidden */}
                 <img 
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" 
@@ -140,7 +142,7 @@ export default function SystemTesting() {
       <section className="py-16 bg-gradient-to-r from-pink-200 to-pink-400">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Ready for comprehensive system testing?</h2>
-          <Button size="lg" className="bg-white text-pink-800 hover:bg-pink-100">Contact Us</Button>
+          <Button size="lg" className="bg-white text-pink-800 hover:bg-pink-100" onClick={() => navigate('/contact')}>Contact Us</Button>
         </div>
       </section>
       <Footer />

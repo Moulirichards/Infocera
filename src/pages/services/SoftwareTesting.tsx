@@ -5,8 +5,10 @@ import { Button } from '../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { CheckCircle, Code, Bug, Shield, Zap, Users, Clock, Target } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const SoftwareTesting = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -18,7 +20,7 @@ const SoftwareTesting = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Software Testing Services</h1>
             <p className="text-xl mb-8">Ensure quality, reliability, and performance with comprehensive software testing solutions for your applications.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-green-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-green-100 transition-all duration-300">Start Testing</button>
+              <button className="bg-white text-green-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-green-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Testing</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />
@@ -260,61 +262,7 @@ const SoftwareTesting = () => {
           </div>
           <Card className="shadow-xl">
             <CardContent className="p-8">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your Name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="+1 (555) 123-4567"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Project Requirements *</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Describe your testing requirements..."
-                    required
-                  ></textarea>
-                </div>
-                <div className="text-center">
-                  <Button type="submit" size="lg" className="bg-blue-600 hover:bg-blue-700">
-                    Submit
-                  </Button>
-                </div>
-              </form>
+              {/* Form removed */}
             </CardContent>
           </Card>
         </div>

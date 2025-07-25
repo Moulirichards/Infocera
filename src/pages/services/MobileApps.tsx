@@ -1,10 +1,11 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Smartphone, Apple, PlayCircle, Code, Zap, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const MobileApps = () => {
+  const navigate = useNavigate();
   const technologies = [
     {
       name: "React Native",
@@ -43,13 +44,13 @@ const MobileApps = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-purple-900 to-pink-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Mobile Apps</h1>
-            <p className="text-xl mb-8">Transform your ideas into high-performance mobile apps for iOS and Android platforms.</p>
+            <p className="text-xl mb-8 text-white font-semibold">Transform your ideas into high-performance mobile apps for iOS and Android platforms.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300">Start Mobile Project</button>
+              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Mobile Project</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />
@@ -98,9 +99,13 @@ const MobileApps = () => {
                   ))}
                 </ul>
                 
-                <Button size="lg" variant="outline" className="border-white text-blue-900 hover:bg-white hover:text-blue-900">
+                <Link
+                  to="/services/mobile-apps/reactnative"
+                  className="inline-flex items-center px-8 py-3 mt-4 bg-white text-blue-600 font-semibold rounded-xl border border-blue-200 hover:bg-blue-50 transition-all duration-300"
+                >
                   Learn More
-                </Button>
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </div>
             ))}
           </div>

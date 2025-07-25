@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Layers, Code, Database, TrendingUp, MonitorSmartphone, Globe } from 'lucide-react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const industries = [
   'Finance',
@@ -35,6 +36,7 @@ const faqs = [
 ];
 
 export default function JavaTesting() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -50,7 +52,7 @@ export default function JavaTesting() {
                 Ensure your Java applications are robust and reliable with expert testing services.
               </p>
               <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-orange-700 text-white hover:bg-orange-800">Get Started</Button>
+                <Button size="lg" className="bg-orange-700 text-white hover:bg-orange-800" onClick={() => navigate('/contact')}>Get Started</Button>
                 {/* Mobile: Small logo beside button, Desktop: Hidden */}
                 <img 
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" 
@@ -140,7 +142,7 @@ export default function JavaTesting() {
       <section className="py-16 bg-gradient-to-r from-orange-200 to-orange-400">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Ready to test your Java applications?</h2>
-          <Button size="lg" className="bg-white text-orange-800 hover:bg-orange-100">Contact Us</Button>
+          <Button size="lg" className="bg-white text-orange-800 hover:bg-orange-100" onClick={() => navigate('/contact')}>Contact Us</Button>
         </div>
       </section>
       <Footer />

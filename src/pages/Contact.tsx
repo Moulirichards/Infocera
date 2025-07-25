@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -62,6 +62,68 @@ const StyledWrapper = styled.div`
 `;
 
 const Contact = () => {
+  // Add state for subject and subcategory
+  const [subject, setSubject] = useState('');
+  const [subCategory, setSubCategory] = useState('');
+
+  // Define sub-categories for each subject
+  const serviceSubCategories = [
+    'Software Products',
+    'Web Development',
+    'Mobile Apps',
+    'Online Marketing',
+    'Creative Design',
+    'Consulting',
+    'Data Science',
+    'Testing',
+    'Cloud Solutions',
+    'Cyber Security',
+    'Other Service'
+  ];
+  const technologySubCategories = [
+    'Architecture',
+    'Apache',
+    'AR/VR Development',
+    'Ajax & JSON',
+    'AngularJS/JS',
+    'Aws',
+    'Blockchain Development',
+    'Cassandra',
+    'Deployment Automation',
+    'Drupal',
+    'Godaddy',
+    'Google Cloud',
+    'Html & CSS',
+    'IIS',
+    'Integration Testing',
+    'IoT Solutions',
+    'Java',
+    'Java Frameworks',
+    'Java Testing',
+    'Jboss',
+    'Joomla',
+    'Jquery',
+    'Jquery UI',
+    'Jsp/Jsf',
+    'Mongodb',
+    'Node.js Development',
+    'Oracle',
+    'Perl',
+    'Php',
+    'Python',
+    'React Development',
+    'Redis',
+    'SDLC',
+    'Shell',
+    'Software Testing',
+    'SQL Database',
+    'SQL Server',
+    'System Testing',
+    'Tomcat',
+    'Unit Testing',
+    'Wordpress'
+  ];
+
   return (
     <div 
       className="min-h-screen relative"
@@ -109,6 +171,7 @@ const Contact = () => {
                 </div>
                 
                 <form className="space-y-4">
+                  {/* First row: First Name and Last Name */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
@@ -133,7 +196,7 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+                  {/* Second row: Email */}
                   <div className="group">
                     <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
                       Email Address *
@@ -145,7 +208,7 @@ const Contact = () => {
                       placeholder=""
                     />
                   </div>
-                  
+                  {/* Third row: Phone Number */}
                   <div className="group">
                     <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
                       Phone Number
@@ -156,22 +219,61 @@ const Contact = () => {
                       placeholder=""
                     />
                   </div>
-                  
+                  {/* Subject and Sub Category Dropdowns */}
+                  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+                    <div className="group w-full md:w-1/2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
+                        Subject *
+                      </label>
+                      <select
+                        className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white backdrop-blur-sm group-hover:bg-white/10"
+                        value={subject}
+                        onChange={e => {
+                          setSubject(e.target.value);
+                          setSubCategory(''); // Reset subcategory when subject changes
+                        }}
+                        required
+                      >
+                        <option value="" className="bg-gray-800">Select a subject</option>
+                        <option value="services" className="bg-gray-800">Services</option>
+                        <option value="technologies" className="bg-gray-800">Technologies</option>
+                      </select>
+                    </div>
+                    <div className="group w-full md:w-1/2">
+                      <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
+                        Sub Category *
+                      </label>
+                      <select
+                        className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white backdrop-blur-sm group-hover:bg-white/10"
+                        value={subCategory}
+                        onChange={e => setSubCategory(e.target.value)}
+                        required
+                        disabled={!subject}
+                      >
+                        <option value="" className="bg-gray-800">{subject ? 'Select a sub category' : 'Select subject first'}</option>
+                        {subject === 'services' && serviceSubCategories.map(opt => (
+                          <option key={opt} value={opt} className="bg-gray-800">{opt}</option>
+                        ))}
+                        {subject === 'technologies' && technologySubCategories.map(opt => (
+                          <option key={opt} value={opt} className="bg-gray-800">{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  {/* Dynamic field for software description or project title */}
                   <div className="group">
                     <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
-                      Subject *
+                      {subject === 'services' ? 'Describe which software you want *' : subject === 'technologies' ? 'Project Title *' : 'Details *'}
                     </label>
-                    <select className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white backdrop-blur-sm group-hover:bg-white/10">
-                      <option value="" className="bg-gray-800">Select a subject</option>
-                      <option value="web-development" className="bg-gray-800">Web Development</option>
-                      <option value="mobile-apps" className="bg-gray-800">Mobile App Development</option>
-                      <option value="ai-ml" className="bg-gray-800">AI & Machine Learning</option>
-                      <option value="cloud-solutions" className="bg-gray-800">Cloud Solutions</option>
-                      <option value="consulting" className="bg-gray-800">IT Consulting</option>
-                      <option value="other" className="bg-gray-800">Other</option>
-                    </select>
+                    <input
+                      type="text"
+                      required
+                      disabled={!subject}
+                      className="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 text-white placeholder-gray-400 backdrop-blur-sm group-hover:bg-white/10"
+                      placeholder={subject === 'services' ? 'Describe which software you want' : subject === 'technologies' ? 'Project Title' : 'Select subject first'}
+                    />
                   </div>
-                  
+                  {/* Message textarea follows below */}
                   <div className="group">
                     <label className="block text-sm font-medium text-gray-200 mb-2 group-focus-within:text-emerald-400 transition-colors">
                       Message *
@@ -183,6 +285,7 @@ const Contact = () => {
                       placeholder="Tell us about your project, requirements, and how we can help you achieve your goals..."
                     ></textarea>
                   </div>
+                  
                   
                   <div className="flex items-center justify-center space-x-4 pt-2">
                     <StyledWrapper>

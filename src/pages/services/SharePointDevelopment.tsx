@@ -194,25 +194,7 @@ const SharePointDevelopment = () => (
     <section className="py-12 bg-white">
       <div className="max-w-2xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-orange-900 mb-4">Contact Us</h2>
-        <form className="space-y-4 bg-orange-50 p-6 rounded-lg shadow">
-          <div>
-            <label className="block text-sm font-medium text-orange-900 mb-1">Name *</label>
-            <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded" placeholder="Your Name" required />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-orange-900 mb-1">Email *</label>
-            <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded" placeholder="Your Email" required />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-orange-900 mb-1">Phone</label>
-            <input type="tel" className="w-full px-4 py-2 border border-gray-300 rounded" placeholder="Your Phone" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-orange-900 mb-1">Message</label>
-            <textarea className="w-full px-4 py-2 border border-gray-300 rounded" rows={4} placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" className="w-full bg-orange-700 hover:bg-orange-800 text-white font-semibold py-2 px-4 rounded transition">Submit</button>
-        </form>
+        {/* Form removed */}
       </div>
     </section>
     <Footer />

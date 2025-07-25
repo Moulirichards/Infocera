@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Layers, Code, Database, TrendingUp, MonitorSmartphone, Globe } from 'lucide-react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const industries = [
   'IT & DevOps',
@@ -35,6 +36,7 @@ const faqs = [
 ];
 
 export default function Perl() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -50,7 +52,7 @@ export default function Perl() {
                 Automate, process data, and build web applications with the power of Perl scripting.
               </p>
               <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-purple-700 text-white hover:bg-purple-800">Get Started</Button>
+                <Button size="lg" className="bg-purple-700 text-white hover:bg-purple-800" onClick={() => navigate('/contact')}>Get Started</Button>
                 {/* Mobile: Small logo beside button, Desktop: Hidden */}
                 <img 
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/perl/perl-original.svg" 
@@ -140,7 +142,7 @@ export default function Perl() {
       <section className="py-16 bg-gradient-to-r from-purple-200 to-purple-400">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Ready to automate with Perl scripting?</h2>
-          <Button size="lg" className="bg-white text-purple-800 hover:bg-purple-100">Contact Us</Button>
+          <Button size="lg" className="bg-white text-purple-800 hover:bg-purple-100" onClick={() => navigate('/contact')}>Contact Us</Button>
         </div>
       </section>
       <Footer />

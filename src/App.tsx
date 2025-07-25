@@ -46,6 +46,7 @@ import NodeJS from '@/pages/services/web-development/NodeJS';
 import Android from '@/pages/services/mobile-apps/Android';
 import IOSDevelopment from '@/pages/services/mobile-apps/iOS';
 import Flutter from '@/pages/services/mobile-apps/Flutter';
+import ReactNative from '@/pages/services/mobile-apps/ReactNative';
 
 // AI/ML
 import MachineLearning from '@/pages/services/ai-ml/MachineLearning';
@@ -152,6 +153,9 @@ import JavaFrameworks from '@/pages/technologies/JavaFrameworks';
 
 import Apply from '@/pages/Apply';
 import { ChatBot } from './components/ui/ChatBot';
+import MyAccount from '@/pages/MyAccount';
+import CreateAccount from '@/pages/CreateAccount';
+import ForgotPassword from '@/pages/ForgotPassword';
 
 function App() {
   return (
@@ -169,6 +173,8 @@ function App() {
           <Route path="/careers/apply" element={<Apply />} />
           <Route path="/news" element={<News />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/create-account" element={<CreateAccount />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
           {/* Service Category Routes */}
           <Route path="/services/web-development" element={<WebDevelopment />} />
@@ -212,6 +218,7 @@ function App() {
           <Route path="/services/mobile-apps/android-development" element={<Android />} />
           <Route path="/services/mobile-apps/ios-development" element={<IOSDevelopment />} />
           <Route path="/services/mobile-apps/flutter" element={<Flutter />} />
+          <Route path="/services/mobile-apps/reactnative" element={<ReactNative />} />
 
           {/* AI/ML Routes */}
           <Route path="/services/ai-ml/machine-learning" element={<MachineLearning />} />
@@ -297,6 +304,7 @@ function App() {
           <Route path="/services/security-testing" element={<SecurityTesting />} />
           <Route path="/services/performance-testing" element={<PerformanceTesting />} />
           <Route path="/services/ecommerce-development" element={<EcommerceDevelopment />} />
+          <Route path="/login" element={<MyAccount />} />
         </Routes>
         <ChatBot />
       </Router>

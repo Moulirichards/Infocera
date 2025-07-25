@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { MousePointer, Target, BarChart3, Zap, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const PayPerClickManagement = () => {
+  const navigate = useNavigate();
   const services = [
     {
       name: "Google Ads Management",
@@ -38,7 +39,7 @@ const PayPerClickManagement = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Pay Per Click Management</h1>
             <p className="text-xl mb-8">Maximize your ROI with expertly managed PPC campaigns that drive targeted traffic and conversions.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300">Start PPC Campaign</button>
+              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start PPC Campaign</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

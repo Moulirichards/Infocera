@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { BarChart, PieChart, TrendingUp, Database, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const DataAnalytics = () => {
+  const navigate = useNavigate();
   const technologies = [
     {
       name: "Business Intelligence",
@@ -48,7 +49,7 @@ const DataAnalytics = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Data Analytics</h1>
             <p className="text-xl mb-8">Unlock actionable insights from your data to drive smarter business decisions and growth.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-purple-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-purple-100 transition-all duration-300">Start Data Project</button>
+              <button className="bg-white text-purple-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-purple-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start Data Project</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />
@@ -99,13 +100,6 @@ const DataAnalytics = () => {
                   ))}
                 </ul>
                 
-                <Link
-                  to={tech.path}
-                  className="inline-flex items-center text-pink-600 font-semibold hover:text-pink-700 transition-colors"
-                >
-                  Explore Service
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
               </div>
             ))}
           </div>

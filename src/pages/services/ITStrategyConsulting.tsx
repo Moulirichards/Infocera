@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Lightbulb, Target, TrendingUp, Shield, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ITStrategyConsulting = () => {
+  const navigate = useNavigate();
   const services = [
     {
       name: "Digital Transformation",
@@ -38,7 +39,7 @@ const ITStrategyConsulting = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">IT Strategy Consulting</h1>
             <p className="text-xl mb-8">Align your IT strategy with business goals for sustainable growth and innovation.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-indigo-100 transition-all duration-300">Start IT Strategy</button>
+              <button className="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-indigo-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start IT Strategy</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

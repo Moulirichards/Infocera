@@ -4,7 +4,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import { Button } from '@/components/ui/button';
 import { Code, MonitorSmartphone, Paintbrush, Globe, TrendingUp, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const faqs = [
   { q: 'What is HTML5?', a: 'HTML5 is the latest version of the HyperText Markup Language, used for structuring and presenting content on the web.' },
@@ -25,6 +25,7 @@ const industries = [
 ];
 
 export default function HtmlCss() {
+  const navigate = useNavigate();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   return (
     <div className="min-h-screen flex flex-col">
@@ -34,9 +35,7 @@ export default function HtmlCss() {
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">HTML5 & CSS3 Web Design</h1>
           <p className="text-xl mb-6">Modern, responsive, and visually stunning websites with HTML5 & CSS3 by Infocera.</p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-white text-pink-600 font-bold shadow hover:bg-blue-100">Start Your Web Project</Button>
-          </Link>
+          <Button size="lg" className="bg-white text-pink-600 font-bold shadow hover:bg-blue-100" onClick={() => navigate('/contact')}>Start Your Web Project</Button>
         </div>
       </section>
       {/* Features Section */}
@@ -118,9 +117,7 @@ export default function HtmlCss() {
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4">Ready to Build a Modern Website?</h2>
           <p className="mb-6">Contact Infocera for a free consultation and see how HTML5 & CSS3 can elevate your web presence.</p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-white text-pink-600 font-bold shadow hover:bg-blue-100">Get Started</Button>
-          </Link>
+          <Button size="lg" className="bg-white text-pink-600 font-bold shadow hover:bg-blue-100" onClick={() => navigate('/contact')}>Get Started</Button>
         </div>
       </section>
       <Footer />

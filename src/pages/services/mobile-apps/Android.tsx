@@ -10,14 +10,14 @@ const Android = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-green-50 to-emerald-50">
+      <section className="pt-20 pb-16 bg-gradient-to-br from-green-800 to-emerald-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Android App Development
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl mb-8 text-white font-semibold">
                 Develop powerful Android applications with Kotlin and Java for Google Play Store.
               </p>
               <Link

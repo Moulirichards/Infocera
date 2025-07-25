@@ -4,6 +4,7 @@ import { Layers, Code, Database, TrendingUp, MonitorSmartphone, Globe } from 'lu
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const industries = [
   'Banking & Finance',
@@ -36,6 +37,7 @@ const faqs = [
 ];
 
 export default function JavaFrameworks() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen bg-white">
@@ -52,7 +54,7 @@ export default function JavaFrameworks() {
                 Build robust, scalable, and secure enterprise applications with industry-leading Java frameworks.
               </p>
               <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-green-700 text-white hover:bg-green-800">Get Started</Button>
+                <Button size="lg" className="bg-green-700 text-white hover:bg-green-800" onClick={() => navigate('/contact')}>Get Started</Button>
                 {/* Mobile: Small logos beside button, Desktop: Hidden */}
                 <div className="flex gap-2 sm:hidden">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" className="w-8 h-8" />
@@ -144,7 +146,7 @@ export default function JavaFrameworks() {
       <section className="py-16 bg-gradient-to-r from-green-200 to-green-400">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Ready to build with Java Frameworks?</h2>
-          <Button size="lg" className="bg-white text-green-800 hover:bg-green-100">Contact Us</Button>
+          <Button size="lg" className="bg-white text-green-800 hover:bg-green-100" onClick={() => navigate('/contact')}>Contact Us</Button>
         </div>
       </section>
       <Footer />

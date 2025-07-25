@@ -4,7 +4,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import { Button } from '@/components/ui/button';
 import { Code, Server, Database, TrendingUp, MonitorSmartphone, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const faqs = [
   { q: 'What is Node.js?', a: 'Node.js is a runtime environment that allows you to run JavaScript on the server, enabling fast and scalable backend development.' },
@@ -25,6 +25,7 @@ const industries = [
 ];
 
 export default function NodeJSDevelopment() {
+  const navigate = useNavigate();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   return (
     <div className="min-h-screen flex flex-col">
@@ -34,9 +35,7 @@ export default function NodeJSDevelopment() {
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Node.js Development</h1>
           <p className="text-xl mb-6">Fast, scalable, and modern backend solutions with Node.js by Infocera.</p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-white text-green-900 font-bold shadow hover:bg-green-100">Start Your Node.js Project</Button>
-          </Link>
+          <Button size="lg" className="bg-white text-green-900 font-bold shadow hover:bg-green-100" onClick={() => navigate('/contact')}>Start Your Node.js Project</Button>
         </div>
       </section>
       {/* Features Section */}
@@ -118,9 +117,7 @@ export default function NodeJSDevelopment() {
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4">Ready to Build with Node.js?</h2>
           <p className="mb-6">Contact Infocera for a free consultation and see how Node.js can power your next project.</p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-white text-green-900 font-bold shadow hover:bg-green-100">Get Started</Button>
-          </Link>
+          <Button size="lg" className="bg-white text-green-900 font-bold shadow hover:bg-green-100" onClick={() => navigate('/contact')}>Get Started</Button>
         </div>
       </section>
       <Footer />

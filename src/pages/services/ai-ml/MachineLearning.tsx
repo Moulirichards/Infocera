@@ -17,7 +17,7 @@ const MachineLearning = () => {
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Machine Learning Solutions
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl mb-8 text-white font-semibold">
                 Implement intelligent systems that learn and adapt with advanced machine learning algorithms and models.
               </p>
               <Link

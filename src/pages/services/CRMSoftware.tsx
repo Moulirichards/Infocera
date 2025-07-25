@@ -2,8 +2,10 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CRMSoftware = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -27,7 +29,7 @@ const CRMSoftware = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">CRM Software</h1>
               <p className="text-xl mb-8">Manage customer relationships, sales, and support with a powerful, easy-to-use CRM platform.</p>
               <div className="flex flex-row items-center md:block">
-                <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300">Get CRM Demo</button>
+                <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300" onClick={() => navigate('/contact')}>Get CRM Demo</button>
                 <span className="inline-block ml-2 md:hidden">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                     <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />
@@ -75,17 +77,7 @@ const CRMSoftware = () => {
         <section className="max-w-2xl mx-auto px-4 py-12">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold mb-6 text-blue-800 text-center">Get a Free Quote Now</h2>
-            {submitted ? (
-              <div className="text-green-600 text-center font-semibold py-8">Thank you! Our team will contact you soon.</div>
-            ) : (
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white text-gray-900 placeholder-gray-400" />
-                <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white text-gray-900 placeholder-gray-400" />
-                <input type="tel" name="phone" placeholder="Phone" value={form.phone} onChange={handleChange} required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white text-gray-900 placeholder-gray-400" />
-                <textarea name="message" placeholder="Message" rows={3} value={form.message} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white text-gray-900 placeholder-gray-400 resize-none" />
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">SUBMIT</Button>
-              </form>
-            )}
+            {/* Form removed */}
           </div>
         </section>
       </main>

@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const faqs = [
   { q: 'What is CRM software and why does my business need it?', a: 'CRM (Customer Relationship Management) software helps you manage customer relationships, sales, and productivity, leading to improved customer retention and business growth.' },
@@ -12,6 +13,7 @@ const faqs = [
 ];
 
 export default function CRMSoftwareDevelopment() {
+  const navigate = useNavigate();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   return (
     <div className="min-h-screen service-page flex flex-col">
@@ -23,7 +25,7 @@ export default function CRMSoftwareDevelopment() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">CRM Software Development</h1>
             <p className="text-xl mb-8">Custom CRM solutions designed to fit your business processes and help you grow customer relationships.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-indigo-100 transition-all duration-300">Start CRM Project</button>
+              <button className="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-indigo-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start CRM Project</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />

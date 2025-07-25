@@ -4,7 +4,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import { Button } from '@/components/ui/button';
 import { Code, RefreshCw, Database, TrendingUp, MonitorSmartphone, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const faqs = [
   { q: 'What is AJAX?', a: 'AJAX (Asynchronous JavaScript and XML) enables web pages to update asynchronously by exchanging data with a web server behind the scenes.' },
@@ -25,6 +25,7 @@ const industries = [
 ];
 
 export default function AjaxJson() {
+  const navigate = useNavigate();
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   return (
     <div className="min-h-screen flex flex-col">
@@ -34,9 +35,7 @@ export default function AjaxJson() {
         <div className="max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">AJAX & JSON Development</h1>
           <p className="text-xl mb-6">Build fast, interactive, and data-driven web apps with AJAX and JSON by Infocera.</p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-white text-blue-900 font-bold shadow hover:bg-blue-100">Start Your Web Project</Button>
-          </Link>
+          <Button size="lg" className="bg-white text-blue-900 font-bold shadow hover:bg-blue-100" onClick={() => navigate('/contact')}>Start Your AJAX/JSON Project</Button>
         </div>
       </section>
       {/* Features Section */}
@@ -118,9 +117,7 @@ export default function AjaxJson() {
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4">Ready to Build Fast, Interactive Web Apps?</h2>
           <p className="mb-6">Contact Infocera for a free consultation and see how AJAX & JSON can power your next project.</p>
-          <Link to="/contact">
-            <Button size="lg" className="bg-white text-blue-900 font-bold shadow hover:bg-blue-100">Get Started</Button>
-          </Link>
+          <Button size="lg" className="bg-white text-blue-900 font-bold shadow hover:bg-blue-100" onClick={() => navigate('/contact')}>Get Started</Button>
         </div>
       </section>
       <Footer />

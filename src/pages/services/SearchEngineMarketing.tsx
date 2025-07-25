@@ -1,7 +1,9 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const SearchEngineMarketing = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-white service-page">
       <Navbar />
@@ -12,7 +14,7 @@ const SearchEngineMarketing = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Search Engine Marketing</h1>
             <p className="text-xl mb-8">Boost your online visibility and drive targeted traffic with expert SEM strategies and campaigns.</p>
             <div className="flex flex-row items-center md:block">
-              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300">Start SEM Campaign</button>
+              <button className="bg-white text-blue-700 font-bold px-8 py-4 rounded-xl shadow hover:bg-blue-100 transition-all duration-300" onClick={() => navigate('/contact')}>Start SEM Campaign</button>
               <span className="inline-block ml-2 md:hidden">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                   <circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.15" />
@@ -99,25 +101,7 @@ const SearchEngineMarketing = () => {
       <section className="py-12 bg-white">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-orange-900 mb-4">Contact Us</h2>
-          <form className="space-y-4 bg-orange-50 p-6 rounded-lg shadow">
-            <div>
-              <label className="block text-sm font-medium text-orange-900 mb-1">Name *</label>
-              <input type="text" className="w-full px-4 py-2 border border-gray-300 rounded" placeholder="Your Name" required />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-orange-900 mb-1">Email *</label>
-              <input type="email" className="w-full px-4 py-2 border border-gray-300 rounded" placeholder="Your Email" required />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-orange-900 mb-1">Phone</label>
-              <input type="tel" className="w-full px-4 py-2 border border-gray-300 rounded" placeholder="Your Phone" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-orange-900 mb-1">Message</label>
-              <textarea className="w-full px-4 py-2 border border-gray-300 rounded" rows={4} placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" className="w-full bg-orange-700 hover:bg-orange-800 text-white font-semibold py-2 px-4 rounded transition">Submit</button>
-          </form>
+          {/* Form removed */}
         </div>
       </section>
       <Footer />
